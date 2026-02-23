@@ -1,0 +1,31 @@
+<decoder name="custom-openvpn">
+  <program_name>openvpn</program_name>
+</decoder>
+
+<decoder name="custom-openvpn login">
+  <parent>custom-openvpn</parent>
+  <prematch>\d+.\d+.\d+.\d+:\d+ [</prematch>
+  <regex>(\d+.\d+.\d+.\d+):(\d+) [(\S+)] Peer Connection (\S+) with [AF_INET]</regex>
+  <order>srcip,srcport,srcuser,status</order>
+</decoder>
+
+<decoder name="custom-openvpn cross">
+  <parent>custom-openvpn</parent>
+  <prematch>\S+/\d+.\d+.\d+.\d+:\d+ MULTI</prematch>
+  <regex>(\S+)/(\d+.\d+.\d+.\d+):(\d+) MULTI: Learn: (\d+.\d+.\d+.\d+) -> </regex>
+  <order>srcuser,srcip,srcport,dstip</order>
+</decoder>
+
+<decoder name="custom-openvpn logoff">
+  <parent>custom-openvpn</parent>
+  <prematch>\S+/\d+.\d+.\d+.\d+:\d+ SIGTERM[</prematch>
+  <regex>(\S+)/(\d+.\d+.\d+.\d+):(\d+) SIGTERM[(\S+\p+\S+\p+\S+)] received, client-instance exiting</regex>
+  <order>srcuser,srcip,srcport,status</order>
+</decoder>
+
+<decoder name="custom-openvpn fail">
+  <parent>custom-openvpn</parent>
+  <prematch>user '</prematch>
+  <regex>user (\p+\S+\p+) could (\S+\s+\S+)</regex>
+  <order>srcuser,status</order>
+</decoder>
