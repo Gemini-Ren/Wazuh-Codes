@@ -1,0 +1,6 @@
+
+<decoder name="win-changed-attr">
+    <prematch>Changed Attributes:</prematch>
+    <regex>^\s*(\w[\w\s]+):\s*(.*)$</regex>
+    <order>attribute field</order>
+</decoder>
