@@ -1,0 +1,50 @@
+<decoder name="custom-cisco-asa-auth">
+  <prematch>%ASA-auth-4-113019</prematch>
+  <regex>%ASA-auth-(\d+)-(\d+): Group = (\S+), Username = (\S+), IP = (\d+.\d+.\d+.\d+), Session (\S+). Session Typ$
+  <order>severity,id,group,user,srcip,status,protocol,duration,byte,byte_rcv,reason</order>
+</decoder>
+
+<decoder name="custom-cisco-asa-add">
+  <prematch>%ASA--7-746012:</prematch>
+  <regex>%ASA--(\d+)-(\d+): user-identity: Add IP-User mapping (\d+.\d+.\d+.\d+) - (\S+) Succeeded - VPN user</rege$
+  <order>severity,id,srcip,domain</order>
+</decoder>                        
+
+<decoder name="custom-cisco-asa-del">
+  <prematch>%ASA--7-746013:</prematch>
+  <regex>%ASA--(\d+)-(\d+): user-identity: Delete IP-user mapping (\d+.\d+.\d+.\d+) - (\S+) Succeeded - (\S+\s+\S+\$
+  <order>severity,id,srcip,domain,action</order>
+</decoder>
+
+<decoder name="custom-asa-connect">
+  <prematch>%ASA-svc-4-722051:</prematch>
+  <regex>%ASA-svc-(\d+)-(\d+): Group (\S+) User (\S+) IP (\p+\d+.\d+.\d+.\d+\p+) IPv4 Address (\p+\d+.\d+.\d+.\d+\p$
+  <order>severity,id,group,user,srcip,dstip</order>
+</decoder>
+
+<decoder name="custom-asa-error">
+  <prematch>%ASA-svc-5-722012:</prematch>
+  <regex>%ASA-svc-(\d+)-(\d+): Group (\S+) User (\S+) IP (\p+\d+.\d+.\d+.\d+\p+) SVC Message: (\d+\S+): (\.*)</rege$
+<order>severity,id,group,user,srcip,notice,message</order>
+</decoder>
+
+<decoder name="custom-asa-estab">
+  <prematch>%ASA-svc-5-722033:</prematch>
+  <regex>%ASA-svc-(\d+)-(\d+): Group (\S+) User (\S+) IP (\p+\d+.\d+.\d+.\d+\p+) First (\S+\s+\S+) connection (\S+)$
+ <order>severity,id,group,user,srcip,protocol,status</order>
+</decoder>
+
+<decoder name="custom-cisco-asa-term">
+  <prematch>%ASA-svc-6-722023</prematch>
+  <regex>%ASA-svc-(\d+)-(\d+): Group (\S+) User (\S+) IP (\p+\d+.\d+.\d+.\d+\p+) (\S+\s+\S+) connection (\S+) witho$
+  <order>severity,id,group,user,srcip,protocol,status</order>
+</decoder>
+
+<decoder name="custom-cisco-asa-6">
+  <prematch>%ASA-svc-6-722022</prematch>
+  <regex>%ASA-svc-(\d+)-(\d+): Group (\S+) User (\S+) IP (\p+\d+.\d+.\d+.\d+\p+) (\S+\s+\S+) connection (\S+) witho$
+  <order>severity,id,group,user,srcip,protocol,status</order>
+</decoder>
+
+
+
