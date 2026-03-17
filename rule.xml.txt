@@ -1,7 +1,0 @@
-<group name="ipinfo"> 
-  <rule id="101300" level="6"> 
-	<field name="event">ipinfo_lookup</field> 
-	<description> IP enrichment: $(ip) - $(country) - $(as_name) 
-	</description> 
-  </rule> 
-</group>
