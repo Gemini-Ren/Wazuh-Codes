@@ -1,7 +1,19 @@
 <group name="ipinfo"> 
-  <rule id="101300" level="6"> 
+  <rule id="101205" level="6"> 
 	<field name="event">ipinfo_lookup</field> 
 	<description> IP enrichment: $(ip) - $(country) - $(as_name) 
 	</description> 
   </rule> 
 </group>
+
+<!-- ========================================================
+Caso esteja usando uma rule esteja lendo um alerta que
+Possui varios logs com ip iguais pode usar essa rule abaixo
+
+Ajuste a regra de acordo com o seu SOC
+========================================================== -->
+
+<rule id="101206" level="6" frequency="" timeframe="" ignore="">
+	<if_matched_sid>101205</if_matched_sid>
+	<description>Enriquecimento dos ips recebidos</description>
+</rule>	
