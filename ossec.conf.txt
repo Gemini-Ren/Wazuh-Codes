@@ -1,4 +1,0 @@
-<localfile> 
-	<log_format>json</log_format> 
-	<location>/var/log/ipinfo_enriched.log</location> 
-</localfile>
