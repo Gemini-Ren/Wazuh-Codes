@@ -1,0 +1,4 @@
+<decoder name="ipinfo"> 
+  	<prematch>"event":"ipinfo_lookup"</prematch> 
+	<plugin_decoder>JSON_Decoder</plugin_decoder> 
+</decoder>
