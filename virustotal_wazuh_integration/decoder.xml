@@ -1,0 +1,4 @@
+<decoder name="custom-virustotal">
+  <prematch>virustotal_lookup</prematch>
+  <plugin_decoder>JSON_Decoder</plugin_decoder>
+</decoder>

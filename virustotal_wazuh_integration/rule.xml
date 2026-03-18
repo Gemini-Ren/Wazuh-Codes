@@ -1,0 +1,14 @@
+<group name="virustotal-enrichment">
+
+  <rule id="101209" level="4">
+    <decoded_as>custom-virustotal</decoded_as>
+    <description>Log do VirusTotal detectado</description>
+  </rule>
+
+  <rule id="101210" level="10">
+    <decoded_as>custom-virustotal</decoded_as>
+    <field name="data.attributes.last_analysis_stats.malicious">^[1-9]</field>
+    <description>IP MALICIOSO detectado pelo VirusTotal</description>
+  </rule>
+
+</group>
