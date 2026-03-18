@@ -5,7 +5,7 @@ Integração para enriquecimento de alertas do Wazuh utilizando a API do VirusTo
 O script monitora o arquivo `alerts.json`, extrai IPs de eventos específicos e consulta o VirusTotal, registrando o JSON completo para posterior análise e correlação.
 
 ## Componentes
-- **abuseipdb_watcher.py**: Script Python responsável pelo enrichment
+- **virustotal_watcher.py**: Script Python responsável pelo enrichment
 - **decoder.xml**: Decoder para interpretar os logs JSON
 - **rule.xml**: Regras de detecção baseadas nos dados enriquecidos
 - **ossec.conf**: Configuração para ingestão do log enriquecido
