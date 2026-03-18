@@ -1,3 +1,14 @@
+"""
+Script: Enriquecimento de dados usando ABUSEIPDB
+Autor: Renan Corrêa Sant'Anna
+LinkedIn: https://www.linkedin.com/in/renan-sant-anna-11775116a
+Data de criação: 17/03/2026
+Descrição: Automação para monitorar alerts.json do Wazuh,
+           extrair o campo 'data.srcip' e enriquecer informações
+           de IP usando a API do IPinfo.
+Versão: 1.0
+"""
+
 #!/bin/python3
 
 import json
