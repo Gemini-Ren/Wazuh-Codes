@@ -5,7 +5,7 @@ LinkedIn: https://www.linkedin.com/in/renan-sant-anna-11775116a
 Data de criação: 17/03/2026
 Descrição: Automação para monitorar alerts.json do Wazuh,
            extrair o campo 'data.srcip' e enriquecer informações
-           de IP usando a API do IPinfo.
+           de IP usando a API do ABUSEIPDB.
 Versão: 1.0
 """
 
