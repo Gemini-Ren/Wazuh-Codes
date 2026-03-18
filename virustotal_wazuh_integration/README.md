@@ -26,7 +26,7 @@ O script monitora o arquivo `alerts.json`, extrai IPs de eventos específicos e 
 ## Execução
 ```bash
 chmod +x virustotal_watcher.py
-./abuseipdb_watcher.py
+./virustotal_watcher.py
 ```
 
 ## Teste
